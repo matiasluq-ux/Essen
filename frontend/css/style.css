@@ -1256,3 +1256,240 @@ footer {
         order: -1;
     }
 }
+
+/* ========== CHECKOUT WHATSAPP STYLES ========== */
+.checkout-progress {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0 3rem;
+    gap: 2rem;
+}
+
+.progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--essen-gray);
+}
+
+.progress-step.active {
+    color: var(--essen-red);
+}
+
+.progress-step.active .step-number {
+    background: var(--essen-red);
+    color: var(--essen-light);
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--essen-gray-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.checkout-form-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.form-section {
+    background: var(--essen-light);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    border-left: 4px solid var(--essen-red);
+}
+
+.form-section h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--essen-dark);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--essen-dark);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--essen-gray-light);
+    border-radius: var(--border-radius-sm);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--essen-red);
+    box-shadow: 0 0 0 3px rgba(227, 6, 19, 0.1);
+}
+
+.form-group input.error,
+.form-group select.error {
+    border-color: #dc3545;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+    display: none;
+}
+
+/* WhatsApp Card */
+.whatsapp-info {
+    margin: 1.5rem 0;
+}
+
+.whatsapp-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+}
+
+.whatsapp-card i {
+    font-size: 2.5rem;
+}
+
+.whatsapp-card h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* Botón WhatsApp */
+.btn-whatsapp {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+}
+
+.btn-whatsapp:hover {
+    background: linear-gradient(135deg, #128C7E, #25D366);
+}
+
+/* Order Summary Mejorado */
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--essen-gray-light);
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-name {
+    font-weight: 600;
+    color: var(--essen-dark);
+}
+
+.item-quantity {
+    font-size: 0.9rem;
+    color: var(--essen-gray);
+}
+
+.item-price {
+    font-weight: 600;
+    color: var(--essen-red);
+}
+
+.order-notes {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--essen-light-bg);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--essen-red);
+}
+
+.order-notes h4 {
+    margin-bottom: 1rem;
+    color: var(--essen-dark);
+}
+
+.order-notes ul {
+    list-style: none;
+    padding: 0;
+}
+
+.order-notes li {
+    padding: 0.3rem 0;
+    color: var(--essen-gray);
+}
+
+.empty-message {
+    text-align: center;
+    color: var(--essen-gray);
+    padding: 2rem;
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .checkout-progress {
+        gap: 1rem;
+    }
+    
+    .progress-step span {
+        font-size: 0.8rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-section {
+        padding: 1.5rem;
+    }
+    
+    .whatsapp-card {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Animaciones */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.btn-whatsapp {
+    animation: pulse 2s infinite;
+}
