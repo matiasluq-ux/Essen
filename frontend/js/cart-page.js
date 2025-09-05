@@ -27,9 +27,8 @@ class CartPage {
 
         cartItemsContainer.innerHTML = this.cart.items.map(item => `
             <div class="cart-item" data-product-id="${item.id}">
-                `<img src="${item.image}" alt="${item.name}" 
-      loading="lazy"
-      onerror="this.src='https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                <img src="${item.image}" alt="${item.name}" 
+                     onerror="this.src='https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                 <div class="item-info">
                     <h4>${item.name}</h4>
                     <p>${item.description}</p>
