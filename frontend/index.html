@@ -15,14 +15,19 @@
                 <h1>ESSEN+</h1>
             </div>
             <nav>
-                <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#productos">Productos</a></li>
-                    <li><a href="#nosotros">Nosotros</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                    <li><a href="/admin">Admin</a></li>
-                </ul>
-            </nav>
+    <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="/admin">Admin</a></li>
+        <!-- Agrega este nuevo item -->
+        <li><a href="/cart" class="cart-link">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+        </a></li>
+    </ul>
+</nav>
         </div>
     </header>
 
@@ -107,6 +112,13 @@
         </div>
     </footer>
 
+<div class="cart-floating" onclick="window.location.href='/cart'">
+    <i class="fas fa-shopping-cart"></i>
+    <span class="cart-count">0</span>
+</div>
+
+<!-- Asegúrate de cargar cart.js después de main.js -->
+<script src="js/cart.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
