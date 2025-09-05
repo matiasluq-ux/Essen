@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Essen</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="/" class="logo">
+                <img src="https://i.imgur.com/7V2bzw3.png" alt="Essen Argentina" class="logo-img">
+                <h1>ESSEN ARGENTINA</h1>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/cart">Carrito</a></li>
+                    <li><a href="/admin">Admin</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="section-title">
+            <h2>Finalizar Compra</h2>
+            <p>Completa tus datos para procesar el pedido</p>
+        </div>
+
+        <div class="checkout-container">
+            <div class="checkout-form">
+                <h3>Datos de Envío</h3>
+                <form id="checkoutForm">
+                    <div class="form-group">
+                        <label for="name">Nombre completo *</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Teléfono *</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Dirección *</label>
+                        <input type="text" id="address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">Ciudad *</label>
+                        <input type="text" id="city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="zipcode">Código Postal</label>
+                        <input type="text" id="zipcode">
+                    </div>
+                    
+                    <h3>Método de Pago</h3>
+                    <div class="payment-methods">
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="transferencia" checked>
+                            <i class="fas fa-building"></i>
+                            <span>Transferencia Bancaria</span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="mercado-pago">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Mercado Pago</span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="efectivo">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <span>Efectivo</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-checkout">
+                        <i class="fas fa-check-circle"></i> Confirmar Pedido
+                    </button>
+                </form>
+            </div>
+
+            <div class="order-summary">
+                <h3>Resumen del Pedido</h3>
+                <div class="summary-items" id="orderItems">
+                    <!-- Los items se cargarán con JavaScript -->
+                </div>
+                <div class="summary-total">
+                    <div class="summary-line">
+                        <span>Subtotal:</span>
+                        <span id="orderSubtotal">$0</span>
+                    </div>
+                    <div class="summary-line">
+                        <span>Envío:</span>
+                        <span id="orderShipping">$0</span>
+                    </div>
+                    <div class="summary-line total">
+                        <span>Total:</span>
+                        <span id="orderTotal">$0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/cart.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+</html>
