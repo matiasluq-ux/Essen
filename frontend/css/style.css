@@ -1146,3 +1146,113 @@ footer {
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
+
+.checkout-container {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.checkout-form {
+    background: var(--essen-light);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+}
+
+.checkout-form h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--essen-dark);
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid var(--essen-gray-light);
+}
+
+.payment-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem;
+    border: 2px solid var(--essen-gray-light);
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.payment-option:hover {
+    border-color: var(--essen-red);
+}
+
+.payment-option input[type="radio"]:checked + i + span {
+    color: var(--essen-red);
+    font-weight: 600;
+}
+
+.payment-option i {
+    font-size: 1.3rem;
+    color: var(--essen-gray);
+}
+
+.payment-option input[type="radio"]:checked + i {
+    color: var(--essen-red);
+}
+
+.order-summary {
+    background: var(--essen-light);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    position: sticky;
+    top: 2rem;
+    height: fit-content;
+}
+
+.order-summary h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--essen-dark);
+    text-align: center;
+}
+
+.summary-items {
+    margin-bottom: 1.5rem;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--essen-gray-light);
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.summary-total {
+    border-top: 2px solid var(--essen-gray-light);
+    padding-top: 1rem;
+}
+
+@media (max-width: 968px) {
+    .checkout-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .order-summary {
+        position: static;
+        order: -1;
+    }
+}
