@@ -113,13 +113,14 @@ app.delete('/api/products/:id', (req, res) => {
   }
 });
 
-// Rutas para servir las páginas
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/index.html'));
+// Servir la página del carrito
+app.get('/cart', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/cart.html'));
 });
 
-app.get('/admin', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/admin.html'));
+// Servir la página de checkout (la crearemos después)
+app.get('/checkout', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/checkout.html'));
 });
 
 // Iniciar servidor
