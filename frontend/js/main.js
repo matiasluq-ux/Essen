@@ -49,7 +49,9 @@ function renderProducts(products) {
                 <h3>${product.name}</h3>
                 <p>${product.description}</p>
                 <div class="product-price">$${product.price.toFixed(2)}</div>
-                <button class="btn">Agregar al Carrito</button>
+                <button class="btn add-to-cart" data-product-id="${product.id}">
+    <i class="fas fa-cart-plus"></i> Agregar al Carrito
+</button>
             </div>
         `;
         productsContainer.appendChild(productCard);
