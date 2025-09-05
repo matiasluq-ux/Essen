@@ -43,7 +43,9 @@ function renderProducts(products) {
         productCard.className = 'product-card';
         productCard.innerHTML = `
             <div class="product-img">
-                <img src="${product.image}" alt="${product.name}" onerror="this.src='https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                <img src="${product.image}" alt="${product.name}" 
+      loading="lazy"
+      onerror="this.src='https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
             </div>
             <div class="product-info">
                 <h3>${product.name}</h3>
