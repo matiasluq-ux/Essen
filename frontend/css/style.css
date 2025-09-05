@@ -136,13 +136,13 @@ nav a[href="/admin"]:hover {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    min-height: 70vh;
+    min-height: 50vh; /* Reducido de 60vh */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: var(--essen-light);
-    padding: 4rem 2rem;
+    padding: 3rem 2rem;
 }
 
 .hero-content {
@@ -286,9 +286,12 @@ nav a[href="/admin"]:hover {
 }
 
 .product-img {
-    height: 250px;
+    height: 180px;
     overflow: hidden;
     position: relative;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
 }
 
 .product-img img {
@@ -296,6 +299,7 @@ nav a[href="/admin"]:hover {
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
+    loading: lazy; /* Carga perezosa */
 }
 
 .product-card:hover .product-img img {
@@ -652,6 +656,16 @@ footer {
 }
 
 /* ========== RESPONSIVE DESIGN ========== */
+@media (min-width: 769px) {
+    .product-img {
+        height: 160px; /* Más pequeño en desktop */
+    }
+    
+    .product-card:hover .product-img img {
+        transform: scale(1.08); /* Zoom más subtle */
+    }
+}
+
 @media (max-width: 768px) {
     .header-container {
         flex-direction: column;
@@ -684,13 +698,29 @@ footer {
     }
     
     .about-image {
-        order: 1;
-    }
+    flex: 1;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    max-height: 400px; /* Límite máximo */
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+    max-height: 400px; /* Evitar imágenes demasiado altas */
+}
     
     .products {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Más estrecho */
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
     
     .footer-content {
         grid-template-columns: 1fr;
@@ -770,6 +800,11 @@ footer {
     border-top: 2px solid var(--essen-light);
     border-radius: 50%;
     animation: spin 1s linear infinite;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
 }
 
 @keyframes spin {
@@ -930,6 +965,7 @@ footer {
     height: 80px;
     object-fit: cover;
     border-radius: var(--border-radius-sm);
+    transition: transform 0.3s ease;
 }
 
 .item-info h4 {
