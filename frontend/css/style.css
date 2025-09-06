@@ -280,13 +280,13 @@ nav a[href="/admin"]:hover {
 }
 
 .product-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
     border-color: var(--essen-red-light);
 }
 
 .product-img {
-    height: 200px; /* Valor por defecto para móvil */
+    height: 160px; /* Valor por defecto para móvil */
     overflow: hidden;
     position: relative;
     background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
@@ -313,7 +313,7 @@ nav a[href="/admin"]:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(transparent 60%, rgba(0, 0, 0, 0.3));
+    background: linear-gradient(to top, rgba(0,0,0,0.3) 0%, transparent 100%);
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -327,18 +327,18 @@ nav a[href="/admin"]:hover {
 }
 
 .product-info h3 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: var(--essen-dark);
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.6rem;
     line-height: 1.3;
 }
 
 .product-info p {
     color: var(--essen-gray);
-    margin-bottom: 1.2rem;
-    line-height: 1.5;
-    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+    font-size: 0.9rem;
 }
 
 .product-price {
