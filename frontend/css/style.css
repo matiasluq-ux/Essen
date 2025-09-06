@@ -137,14 +137,14 @@
             width: 80%;
         }
 
-        nav a[href="/admin"] {
+        nav a[href="/admin.html"] {
             background: var(--essen-red);
             color: var(--essen-light);
             padding: 0.6rem 1.5rem;
             border-radius: 25px;
         }
 
-        nav a[href="/admin"]:hover {
+        nav a[href="/admin.html"]:hover {
             background: var(--essen-red-dark);
             transform: translateY(-2px);
         }
